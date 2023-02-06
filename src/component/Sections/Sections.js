@@ -1,15 +1,14 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import Header from "../Header/Header";
+import AddSection from "./AddSection";
 
 const Sections = () => {
   return (
     <div>
       <Header></Header>
       <Container>
-        <div className="d-flex">
-          <button className="btn btn-success">Add Section</button>
-        </div>
+      <AddSection/>
         <h1 className="text-primary">Sections page</h1>
         <div className="mt-4 row justify-content-center align-items-center">
           <div className="col-8 bordered">

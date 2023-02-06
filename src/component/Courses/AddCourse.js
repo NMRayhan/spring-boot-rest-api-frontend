@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 
-const AddStudent = () => {
+const AddCourse = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -9,39 +9,25 @@ const AddStudent = () => {
   return (
     <>
       <Button variant="success" onClick={handleShow}>
-        Add Student
+        Add Course
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Adding Student in Database</Modal.Title>
+          <Modal.Title>Adding Course in Database</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="text" placeholder="Name" />
+              <Form.Label>Course Title</Form.Label>
+              <Form.Control type="text" placeholder="Title" />
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Admission</Form.Label>
-              <Form.Control type="number" placeholder="Admission" />
+              <Form.Label>Department</Form.Label>
+              <Form.Control type="number" placeholder="Department" />
             </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Address</Form.Label>
-              <Form.Control type="text" placeholder="Address" />
-            </Form.Group>
-
-            <Form.Group className="mb-3">
-              <Form.Label>Phone</Form.Label>
-              <Form.Control type="number" placeholder="Phone" />
-            </Form.Group>
-
-            <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Email" />
-            </Form.Group>
             <div className="d-flex justify-content-center">
               <div className="p-1">
                 <Button variant="primary" type="submit">
@@ -61,4 +47,4 @@ const AddStudent = () => {
   );
 };
 
-export default AddStudent;
+export default AddCourse;

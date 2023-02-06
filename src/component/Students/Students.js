@@ -8,15 +8,7 @@ const Students = () => {
     <div>
       <Header></Header>
       <Container>
-        <div className="d-flex">
-          <button
-            className="btn btn-success"
-            data-bs-toggle="modal"
-            data-bs-target="#addStudentModal"
-          >
-            Add Student
-          </button>
-        </div>
+        <AddStudent />
         <h1 className="text-primary">Students List</h1>
         <div className="mt-4 row justify-content-center align-items-center">
           <div className="col-8 bordered">
@@ -75,7 +67,6 @@ const Students = () => {
             </div>
           </div>
         </div>
-        <AddStudent></AddStudent>
       </Container>
     </div>
   );

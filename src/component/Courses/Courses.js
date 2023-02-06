@@ -1,15 +1,14 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import Header from "../Header/Header";
+import AddCourse from "./AddCourse";
 
 const Courses = () => {
   return (
     <div>
       <Header></Header>
       <Container>
-        <div className="d-flex">
-          <button className="btn btn-success">Add Course</button>
-        </div>
+        <AddCourse/>
         <h1 className="text-primary">Course page</h1>
         <div className="mt-4 row justify-content-center align-items-center">
           <div className="col-8 bordered">
