@@ -7,7 +7,7 @@ const Header = () => {
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <Link class="navbar-brand" to="/home">
-            CRUD in Spring boot
+            Spring boot
           </Link>
           <button
             class="navbar-toggler"

@@ -10,9 +10,9 @@ const Students = () => {
       <Container>
         <AddStudent />
         <h1 className="text-primary">Students List</h1>
-        <div className="mt-4 row justify-content-center align-items-center">
-          <div className="col-8 bordered">
-            <table className="table table-hover">
+        <div className="row justify-content-center align-items-center mt-4">
+          <div className="col-8 table-responsive">
+            <table className="table table-hover table-bordered">
               <thead>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>

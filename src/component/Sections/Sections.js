@@ -11,8 +11,8 @@ const Sections = () => {
       <AddSection/>
         <h1 className="text-primary">Sections page</h1>
         <div className="mt-4 row justify-content-center align-items-center">
-          <div className="col-8 bordered">
-            <table className="table table-hover">
+          <div className="col-8 table-responsive">
+            <table className="table table-hover table-bordered">
               <thead>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>

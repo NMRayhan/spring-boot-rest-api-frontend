@@ -1,6 +1,5 @@
-import { Button, Modal } from "bootstrap";
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 
 const AddTeacher = () => {
   const [show, setShow] = useState(false);
