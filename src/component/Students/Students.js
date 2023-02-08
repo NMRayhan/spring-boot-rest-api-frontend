@@ -4,6 +4,12 @@ import Header from "../Header/Header";
 import AddStudent from "./AddStudent";
 
 const Students = () => {
+  // useEffect(() => {
+  //   fetch("http://localhost:8080/students/getallstudent")
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data));
+  // }, []);
+
   return (
     <div>
       <Header></Header>

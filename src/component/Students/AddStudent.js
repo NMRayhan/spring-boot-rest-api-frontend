@@ -3,9 +3,20 @@ import { Button, Form, Modal } from "react-bootstrap";
 
 const AddStudent = () => {
   const [show, setShow] = useState(false);
+  const [name, setName] = useState("");
+  const [year, setYear] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const student = { name, address, year, phone, email };
+    console.log(student);
+  };
   return (
     <>
       <Button variant="success" onClick={handleShow}>
@@ -20,31 +31,66 @@ const AddStudent = () => {
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Name</Form.Label>
-              <Form.Control type="text" placeholder="Name" />
+              <Form.Control
+                type="text"
+                name={name}
+                placeholder="Name"
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Admission</Form.Label>
-              <Form.Control type="number" placeholder="Admission" />
+              <Form.Control
+                name={year}
+                type="number"
+                placeholder="Admission"
+                onChange={(e) => {
+                  setYear(e.target.value);
+                }}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Address</Form.Label>
-              <Form.Control type="text" placeholder="Address" />
+              <Form.Control
+                name={address}
+                type="text"
+                placeholder="Address"
+                onChange={(e) => {
+                  setAddress(e.target.value);
+                }}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Phone</Form.Label>
-              <Form.Control type="number" placeholder="Phone" />
+              <Form.Control
+                name={phone}
+                type="number"
+                placeholder="Phone"
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                }}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Email" />
+              <Form.Control
+                name={email}
+                type="email"
+                placeholder="Email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
             </Form.Group>
             <div className="d-flex justify-content-center">
               <div className="p-1">
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" onClick={handleSubmit}>
                   Submit
                 </Button>
               </div>
