@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Header from "../Header/Header";
 import AddStudent from "./AddStudent";
 
 const Students = () => {
-  // useEffect(() => {
-  //   fetch("http://localhost:8080/students/getallstudent")
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
-  // }, []);
+  const [students, setStudents] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/students/getallstudent")
+      .then((res) => res.json())
+      .then((data) => setStudents(data));
+  }, []);
+
+  console.log(students);
 
   return (
     <div>
@@ -28,38 +32,20 @@ const Students = () => {
                 <th scope="col">Email</th>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Stepen John</td>
-                  <td>2022</td>
-                  <td>Hopking Str, road-3, hourse-5, Dhaka</td>
-                  <td>037390570</td>
-                  <td>john@gmail.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Stepen John</td>
-                  <td>2022</td>
-                  <td>Hopking Str, road-3, hourse-5, Dhaka</td>
-                  <td>037390570</td>
-                  <td>john@gmail.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Stepen John</td>
-                  <td>2022</td>
-                  <td>Hopking Str, road-3, hourse-5, Dhaka</td>
-                  <td>037390570</td>
-                  <td>john@gmail.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Stepen John</td>
-                  <td>2022</td>
-                  <td>Hopking Str, road-3, hourse-5, Dhaka</td>
-                  <td>037390570</td>
-                  <td>john@gmail.com</td>
-                </tr>
+                {students.map((student) => {
+                  return (
+                    <>
+                      <tr>
+                        <th scope="row">{student.stdID}</th>
+                        <td>{student.name}</td>
+                        <td>{student.admissionYear}</td>
+                        <td>{student.address}</td>
+                        <td>{student.phone}</td>
+                        <td>{student.email}</td>
+                      </tr>
+                    </>
+                  );
+                })}
               </tbody>
             </table>
           </div>
