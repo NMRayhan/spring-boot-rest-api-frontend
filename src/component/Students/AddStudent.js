@@ -15,7 +15,14 @@ const AddStudent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const student = { name, address, year, phone, email };
-    console.log(student);
+    fetch('http://localhost:8080/students/add',{
+      method:"POST",
+      headers:{"Content-type":"application/json"},
+      body:JSON.stringify(student)
+    }).then(()=>{
+      alert("Data save")
+      handleClose(true);
+    })
   };
   return (
     <>
